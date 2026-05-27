@@ -5,7 +5,7 @@ from config import SessionLocal,engine
 from sqlalchemy.orm import Session
 import dbmodels
 app=FastAPI()
-app.add_middleware(CORSMiddleware,allow_origins=["http://localhost:3000"],allow_methods=["*"])
+app.add_middleware(CORSMiddleware,allow_origins=["http://localhost:3000"],allow_methods=["*"],allow_credentials=["*"],allow_headers=["*"])
 
 dbmodels.Base.metadata.create_all(bind=engine)
 @app.get("/")
